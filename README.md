@@ -56,12 +56,12 @@ Flow Matching models offer a simulation-free approach for training continuous no
 ```
 Generative-AI-Models/
 │
-├── vae/               # Variational Autoencoder Implementation
-├── vq_vae/            # Vector Quantized VAE Implementation
-├── attention_vae/     # Attention-based VAE Implementation
-├── diffusion_models/  # (Planned) Diffusion Models
-├── consistency_models/ # (Planned) Consistency Models
-└── flow_matching_models/ # (Planned) Flow Matching Models
+├── VAE/               # Variational Autoencoder Implementation
+├── VQ-VAE/            # Vector Quantized VAE Implementation
+├── Attention_VAE/     # Attention-based VAE Implementation
+├── Diffusion_Models/  # (Planned) Diffusion Models
+├── Consistency_Models/ # (Planned) Consistency Models
+└── Flow_Matching_Models/ # (Planned) Flow Matching Models
 ```
 
 ---
@@ -76,7 +76,7 @@ Generative-AI-Models/
 
 2. **Navigate to the desired model's directory:**
    ```bash
-   cd vae  # For Variational Autoencoder
+   cd VAE  # For Variational Autoencoder
    ```
 ---
 
