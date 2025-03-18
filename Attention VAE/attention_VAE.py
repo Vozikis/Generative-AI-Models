@@ -10,6 +10,7 @@ import shutil
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 import numpy as np
+import matplotlib.pyplot as plt
 
 class SelfAttention(nn.Module):
     def __init__(self, n_heads, emb_dim, in_proj_bias=True, out_proj_bias=True):
@@ -123,24 +124,39 @@ class Encoder(nn.Sequential):
 class Decoder(nn.Sequential):
     def __init__(self):
         super().__init__(
+            nn.Conv2d(4, 4, kernel_size=1, padding=0),
             nn.Conv2d(4, 512, kernel_size=3, padding=1),
             ResidualBlock(512, 512),
             AttentionBlock(512),
             ResidualBlock(512, 512),
             ResidualBlock(512, 512),
             ResidualBlock(512, 512),
-            nn.Upsample(scale_factor=2), 
+            ResidualBlock(512, 512),
+            nn.Upsample(scale_factor=2),  # From 4x4 -> 8x8
+            nn.Conv2d(512, 512, kernel_size=3, padding=1),
+            ResidualBlock(512, 512),
+            ResidualBlock(512, 512),
+            ResidualBlock(512, 512),
+            nn.Upsample(scale_factor=2),  # From 8x8 -> 16x16
             nn.Conv2d(512, 512, kernel_size=3, padding=1),
             ResidualBlock(512, 256),
             ResidualBlock(256, 256),
-            nn.Upsample(scale_factor=2),
-            nn.Conv2d(256, 128, kernel_size=3, padding=1),
+            ResidualBlock(256, 256),
+            nn.Upsample(scale_factor=2),  # From 16x16 -> 32x32
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            ResidualBlock(256, 128),
             ResidualBlock(128, 128),
-            nn.Upsample(scale_factor=2),
+            ResidualBlock(128, 128),
+            nn.GroupNorm(32, 128),
+            nn.SiLU(),
             nn.Conv2d(128, 3, kernel_size=3, padding=1),
-            nn.Tanh()
         )
 
+    def forward(self, x):
+        x /= 0.18215
+        for module in self:
+            x = module(x)
+        return x
     def forward(self, x):
         x /= 0.18215
         for module in self:
@@ -199,3 +215,37 @@ for epoch in range(num_epochs):
     train_losses.append(train_loss / len(train_loader))
 
 print('Training finished!')
+
+
+
+
+
+model.eval()
+
+with torch.no_grad():
+    images, _ = next(iter(train_loader))
+    images = images.to(device)[:10]
+    reconstructed, _ = model(images)
+    
+def denormalize(imgs):
+    imgs = imgs.cpu().numpy()
+    imgs = imgs * 0.5 + 0.5
+    return np.clip(imgs, 0, 1)
+
+images = denormalize(images)
+reconstructed = denormalize(reconstructed)
+
+fig, axes = plt.subplots(2, 10, figsize=(20, 4))
+for i in range(10):
+    axes[0, i].imshow(np.transpose(images[i], (1, 2, 0)))
+    axes[0, i].axis('off')
+    if i == 4:
+        axes[0, i].set_title('Originals', fontsize=14)
+
+    axes[1, i].imshow(np.transpose(reconstructed[i], (1, 2, 0)))
+    axes[1, i].axis('off')
+    if i == 4:
+        axes[1, i].set_title('Reconstructions', fontsize=14)
+
+plt.tight_layout()
+plt.show()
