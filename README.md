@@ -1,6 +1,6 @@
 # Generative AI Models
 
-Welcome to the **Generative AI Models** repository. This project implements various generative models with a focus on clean code and educational explanations.
+Welcome to the **Generative AI Models** repository.
 
 ## Implemented Models
 
@@ -22,9 +22,6 @@ VQ-VAE introduces discrete latent variables using vector quantization, which add
 
 ### 3. Attention-based VAE
 This variant integrates attention mechanisms into the VAE framework to enhance the model's ability to focus on relevant parts of the input during encoding and decoding.
-
-**Reference Paper:**  
-- [Variational Attention for Sequence-to-Sequence Models](https://arxiv.org/abs/1808.09092) — *Ashish Vaswani et al.*
 
 ---
 
@@ -59,12 +56,12 @@ Flow Matching models offer a simulation-free approach for training continuous no
 ```
 Generative-AI-Models/
 │
-├── vae/               # Variational Autoencoder Implementation
-├── vq_vae/            # Vector Quantized VAE Implementation
-├── attention_vae/     # Attention-based VAE Implementation
-├── diffusion_models/  # (Planned) Diffusion Models
-├── consistency_models/ # (Planned) Consistency Models
-└── flow_matching_models/ # (Planned) Flow Matching Models
+├── VAE/               # Variational Autoencoder Implementation
+├── VQ-VAE/            # Vector Quantized VAE Implementation
+├── Attention_VAE/     # Attention-based VAE Implementation
+├── Diffusion_Models/  # (Planned) Diffusion Models
+├── Consistency_Models/ # (Planned) Consistency Models
+└── Flow_Matching_Models/ # (Planned) Flow Matching Models
 ```
 
 ---
@@ -79,27 +76,13 @@ Generative-AI-Models/
 
 2. **Navigate to the desired model's directory:**
    ```bash
-   cd vae  # For Variational Autoencoder
+   cd VAE  # For Variational Autoencoder
    ```
-
-3. **Follow the instructions in the respective `README.md` file for setup and usage.**
-
----
-
-## Contributions
-Contributions are welcome! If you have ideas for improvements, bug fixes, or adding new models, please submit a pull request or open an issue.
-
----
-
-## License
-This project is licensed under the MIT License.
-
 ---
 
 ## References
 - Kingma, D.P., & Welling, M. (2014). *Auto-Encoding Variational Bayes*. [arXiv:1312.6114](https://arxiv.org/abs/1312.6114)
 - Van den Oord, A., Vinyals, O., & Kavukcuoglu, K. (2017). *Neural Discrete Representation Learning*. [arXiv:1711.00937](https://arxiv.org/abs/1711.00937)
-- Vaswani, A., et al. (2018). *Variational Attention for Sequence-to-Sequence Models*. [arXiv:1808.09092](https://arxiv.org/abs/1808.09092)
 - Ho, J., Jain, A., & Abbeel, P. (2020). *Denoising Diffusion Probabilistic Models*. [arXiv:2006.11239](https://arxiv.org/abs/2006.11239)
 - Song, Y., et al. (2023). *Consistency Models*. [arXiv:2303.01469](https://arxiv.org/abs/2303.01469)
 - Lipman, Y., et al. (2023). *Flow Matching for Generative Modeling*. [arXiv:2210.02747](https://arxiv.org/abs/2210.02747)
