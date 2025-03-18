@@ -23,9 +23,6 @@ VQ-VAE introduces discrete latent variables using vector quantization, which add
 ### 3. Attention-based VAE
 This variant integrates attention mechanisms into the VAE framework to enhance the model's ability to focus on relevant parts of the input during encoding and decoding.
 
-**Reference Paper:**  
-- [Variational Attention for Sequence-to-Sequence Models](https://arxiv.org/abs/1808.09092) — *Ashish Vaswani et al.*
-
 ---
 
 ## Models Under Development
@@ -86,7 +83,6 @@ Generative-AI-Models/
 ## References
 - Kingma, D.P., & Welling, M. (2014). *Auto-Encoding Variational Bayes*. [arXiv:1312.6114](https://arxiv.org/abs/1312.6114)
 - Van den Oord, A., Vinyals, O., & Kavukcuoglu, K. (2017). *Neural Discrete Representation Learning*. [arXiv:1711.00937](https://arxiv.org/abs/1711.00937)
-- Vaswani, A., et al. (2018). *Variational Attention for Sequence-to-Sequence Models*. [arXiv:1808.09092](https://arxiv.org/abs/1808.09092)
 - Ho, J., Jain, A., & Abbeel, P. (2020). *Denoising Diffusion Probabilistic Models*. [arXiv:2006.11239](https://arxiv.org/abs/2006.11239)
 - Song, Y., et al. (2023). *Consistency Models*. [arXiv:2303.01469](https://arxiv.org/abs/2303.01469)
 - Lipman, Y., et al. (2023). *Flow Matching for Generative Modeling*. [arXiv:2210.02747](https://arxiv.org/abs/2210.02747)
