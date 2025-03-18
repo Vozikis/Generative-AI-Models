@@ -81,19 +81,6 @@ Generative-AI-Models/
    ```bash
    cd vae  # For Variational Autoencoder
    ```
-
-3. **Follow the instructions in the respective `README.md` file for setup and usage.**
-
----
-
-## Contributions
-Contributions are welcome! If you have ideas for improvements, bug fixes, or adding new models, please submit a pull request or open an issue.
-
----
-
-## License
-This project is licensed under the MIT License.
-
 ---
 
 ## References
