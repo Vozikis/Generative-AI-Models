@@ -1,1 +1,10 @@
 .DS_Store
+*.meta
+*.html
+Attention VAE/data/cifar-10-batches-py/data_batch_1
+Attention VAE/data/cifar-10-batches-py/data_batch_2
+Attention VAE/data/cifar-10-batches-py/data_batch_3
+Attention VAE/data/cifar-10-batches-py/data_batch_5
+Attention VAE/data/cifar-10-batches-py/data_batch_4
+Attention VAE/data/cifar-10-batches-py/test_batch
+Attention VAE/data/cifar-10-python.tar.gz
