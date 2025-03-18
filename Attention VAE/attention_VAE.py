@@ -198,6 +198,4 @@ for epoch in range(num_epochs):
 
     train_losses.append(train_loss / len(train_loader))
 
-    torch.save(model.state_dict(), f'vae_model_epoch_{epoch+1}.pth')
-
 print('Training finished!')
