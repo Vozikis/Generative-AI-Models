@@ -1,6 +1,6 @@
 # Generative AI Models
 
-Welcome to the **Generative AI Models** repository. This project implements various generative models with a focus on clean code and educational explanations.
+Welcome to the **Generative AI Models** repository.
 
 ## Implemented Models
 
