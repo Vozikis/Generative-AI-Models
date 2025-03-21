@@ -13,3 +13,9 @@ Diffusion Models/datasets/MNIST/raw/t10k-images-idx3-ubyte
 Diffusion Models/datasets/MNIST/raw/t10k-labels-idx1-ubyte
 Diffusion Models/datasets/MNIST/raw/train-images-idx3-ubyte
 Diffusion Models/datasets/MNIST/raw/train-labels-idx1-ubyte
+Diffusion Models/datasets/cifar-10-batches-py/data_batch_1
+Diffusion Models/datasets/cifar-10-batches-py/test_batch
+Diffusion Models/datasets/cifar-10-batches-py/data_batch_5
+Diffusion Models/datasets/cifar-10-batches-py/data_batch_4
+Diffusion Models/datasets/cifar-10-batches-py/data_batch_3
+Diffusion Models/datasets/cifar-10-batches-py/data_batch_2
